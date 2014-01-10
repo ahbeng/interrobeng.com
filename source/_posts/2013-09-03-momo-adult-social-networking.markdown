@@ -3,7 +3,7 @@ layout: post
 title: "Momo - Adult Social Networking"
 date: 2013-09-03 21:07
 comments: true
-categories: 
+categories: CS3216
 ---
 
 > How to Win Friends and ~~Influence People~~ Get Laid

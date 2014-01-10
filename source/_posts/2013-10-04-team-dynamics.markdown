@@ -3,7 +3,7 @@ layout: post
 title: "Team Dynamics"
 date: 2013-10-04 22:57
 comments: true
-categories: 
+categories: CS3216
 ---
 
 > When you come to a fork in the road, take it!  
