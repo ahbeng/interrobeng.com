@@ -1,2 +1,27 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+
+* + table {
+  margin-bottom: 1.5em;
+
+  th, td {
+    border: 1px solid $type-border;
+    padding: 4px;
+  }
+
+  th {
+    font-weight: bold;
+  }
+
+  th[align="left"], td[align="left"] {
+    text-align: left;
+  }
+
+  th[align="right"], td[align="right"] {
+    text-align: right;
+  }
+
+  th[align="center"], td[align="center"] {
+    text-align: center;
+  }
+}
