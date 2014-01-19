@@ -9,7 +9,7 @@ categories: NUS
 
 A brief discussion of the [check digit](http://en.wikipedia.org/wiki/Check_digit) algorithm for matriculation numbers / NUSNET IDs prefixed by either U or A, accompanied by a JavaScript implementation and a client-side [calculator](/2014/01/19/nus-matriculation-number-calculator/).
 
-Initiated due to a collaboration with [Camillus](https://www.qxcg.net/) on a bookmarklet which involved mapping NUSNET IDs to matriculation numbers - I initially helped with the U prefix case, as it is more familiar to old farts like me.
+Initiated due to a collaboration with [Camillus](https://www.qxcg.net/) on a bookmarklet which involved mapping NUSNET IDs to matriculation numbers for use with a [redacted] endpoint - I initially helped with the U prefix case, as it is more familiar to old farts like me.
 
 ### Related Work
 
@@ -19,7 +19,7 @@ Though correct, most of them involve extraneous steps, especially for U-prefixed
 
 ### Algorithm
 
-1. For U-prefixed NUSNET IDs such as `u0906931`, discard the third digit - u09<del style="color:red">0</del>6931, resulting in `u096931`.
+1. For U-prefixed NUSNET IDs such as `u0906931`, discard the third digit - u09<del style="color:red">0</del>6931, resulting in `u096931`, which is the corresponding matriculation number without its check digit.
 
 2. Let the last 6 digits be d<sub>1</sub> to d<sub>6</sub>. Compute the weighted sum s = w<sub>1</sub> &times; d<sub>1</sub> + ... + w<sub>6</sub> &times; d<sub>6</sub> using the corresponding weights:
 
@@ -36,7 +36,7 @@ Though correct, most of them involve extraneous steps, especially for U-prefixed
 
 ### Notes
 
-The weights for A-prefixed matriculation numbers are all 1, i.e. the weighted sum is simply equal to the sum of the digits themselves, so their specific algorithm could be simplified further. However, it is formulated like this to unify the algorithms for both current prefixes, as well as possibly accommodate future prefixes.
+The weights for A-prefixed matriculation numbers are all 1, i.e. the weighted sum is simply equal to the sum of the digits themselves, so their specific algorithm could be simplified further. However, it is formulated like this to unify the algorithms for both current prefixes, as well as possibly accommodate future prefixes with different weights.
 
 If this scheme and blog post are somehow still surviving in the far future, you would have to use all 7 digits instead of the last 6, when there have been over 1 million NUS undergraduates since 2010.
 
